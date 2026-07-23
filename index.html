@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GymGuide Privacy Policy / 隱私權政策</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; color: #1c1c1e; }
+  h1 { font-size: 1.6em; margin-top: 0; }
+  h2 { font-size: 1.2em; margin-top: 2em; border-top: 1px solid #e5e5ea; padding-top: 1.2em; }
+  .lang-toggle { position: sticky; top: 0; background: #fff; padding: 12px 0; margin-bottom: 12px; border-bottom: 1px solid #e5e5ea; }
+  .lang-toggle button { padding: 6px 14px; border-radius: 20px; border: 1px solid #c7c7cc; background: #f2f2f7; cursor: pointer; font-size: 0.9em; }
+  .lang-toggle button.active { background: #007aff; color: #fff; border-color: #007aff; }
+  .updated { color: #6e6e73; font-size: 0.9em; }
+  #zh { display: none; }
+  ul { padding-left: 1.3em; }
+  a { color: #007aff; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #000; color: #f2f2f7; }
+    h2 { border-color: #38383a; }
+    .lang-toggle { background: #000; border-color: #38383a; }
+    .lang-toggle button { background: #1c1c1e; border-color: #48484a; color: #f2f2f7; }
+    .updated { color: #98989d; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button id="btn-en" class="active" onclick="showLang('en')">English</button>
+  <button id="btn-zh" onclick="showLang('zh')">繁體中文</button>
+</div>
+
+<div id="en">
+<h1>GymGuide Privacy Policy</h1>
+<p class="updated">Last updated: July 23, 2026</p>
+
+<p>GymGuide ("the App") is developed by Eric Tsai ("we", "us"). This policy explains what information the App collects, how it is used, and your choices. GymGuide does not require account creation or login.</p>
+
+<h2>Information We Collect and How It's Used</h2>
+<ul>
+<li><strong>Photos you capture or select</strong> — When you use the camera or text search to identify gym equipment, the photo or text query is sent to our backend server and forwarded to Anthropic's Claude API solely to generate the equipment guide. Photos are not stored on our server after the request completes.</li>
+<li><strong>Text search queries</strong> — Sent to our backend and Anthropic's Claude API for the same purpose as above.</li>
+<li><strong>IP address</strong> — Our backend temporarily records your IP address (keyed with the date) to enforce a daily usage limit and prevent abuse. This record automatically expires within about 26 hours and is not linked to any other personal information.</li>
+<li><strong>Location (When-In-Use)</strong> — If you use the "Nearby Gyms" feature, the App uses Apple's Core Location and MapKit frameworks to find gyms near you. Your location is processed on-device and by Apple's Maps service; it is never sent to our own backend server.</li>
+<li><strong>Profile and preferences you enter</strong> — Nickname, gender, age, fitness goal, coach name/appearance, app theme, and language preference are stored only in your device's local storage (UserDefaults). This data never leaves your device.</li>
+<li><strong>Search history</strong> — Your last 10 equipment lookups are stored locally on your device only. You can clear them anytime from the History tab, or remove them entirely by deleting the App.</li>
+</ul>
+
+<h2>Third-Party Services</h2>
+<ul>
+<li><strong>Anthropic (Claude API)</strong> — Processes the photo/text you submit to generate the equipment guide. See <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</li>
+<li><strong>Apple (Core Location / MapKit)</strong> — Used for the Nearby Gyms feature, governed by Apple's own privacy practices.</li>
+<li><strong>Cloudflare (Workers / KV)</strong> — Hosts our backend server and temporary rate-limit records.</li>
+</ul>
+
+<h2>Data We Do Not Collect</h2>
+<p>GymGuide does not require an account, does not collect your name/email through the App itself, does not use analytics or advertising SDKs at this time, and does not sell your personal information.</p>
+
+<h2>Your Choices</h2>
+<p>You can deny camera or location permission at any time in iOS Settings; the App will simply be unable to offer the corresponding feature (photo search, or nearby gyms). You can clear your local search history from the History tab, or remove all locally stored data by deleting the App.</p>
+
+<h2>Children's Privacy</h2>
+<p>GymGuide is not directed at children under 13, and we do not knowingly collect personal information from children.</p>
+
+<h2>Changes to This Policy</h2>
+<p>We may update this policy as the App changes (for example, if advertising is introduced in the future, this page will be updated accordingly before that change ships). Continued use of the App after an update constitutes acceptance of the revised policy.</p>
+
+<h2>Contact Us</h2>
+<p>Questions about this policy? Contact us at <a href="mailto:gakct2001@gmail.com">gakct2001@gmail.com</a>.</p>
+</div>
+
+<div id="zh">
+<h1>GymGuide 隱私權政策</h1>
+<p class="updated">最後更新日期：2026 年 7 月 23 日</p>
+
+<p>GymGuide（以下稱「本 App」）由 Eric Tsai（以下稱「我們」）開發。本政策說明本 App 會蒐集哪些資訊、如何使用，以及你有哪些選擇。GymGuide 不需要註冊帳號或登入即可使用。</p>
+
+<h2>我們蒐集的資訊與使用方式</h2>
+<ul>
+<li><strong>你拍攝或選取的照片</strong> — 當你使用拍照或文字搜尋辨識健身器材時，照片或文字查詢內容會傳送至我們的後端伺服器，再轉送給 Anthropic 的 Claude API，僅用於產生器材使用說明。照片在請求處理完成後不會保存在我們的伺服器上。</li>
+<li><strong>文字搜尋內容</strong> — 基於與上述相同的目的，傳送至我們的後端與 Anthropic 的 Claude API。</li>
+<li><strong>IP 位址</strong> — 我們的後端會暫時以「IP + 日期」為索引記錄你的 IP 位址，用來限制每日使用次數、防止濫用。此紀錄約 26 小時後會自動失效，且不會與任何其他個人資訊建立關聯。</li>
+<li><strong>定位資訊（使用期間）</strong> — 若你使用「附近健身房」功能，本 App 會透過 Apple 的 Core Location 與 MapKit 框架尋找附近的健身房。你的定位資訊是在裝置端與 Apple 地圖服務處理，不會傳送到我們自己的後端伺服器。</li>
+<li><strong>你輸入的個人化資料</strong> — 暱稱、性別、年齡、健身目標、教練名字/外觀、App 主題與語言偏好，僅儲存在你裝置本機的儲存空間（UserDefaults）中，這些資料不會離開你的裝置。</li>
+<li><strong>查詢紀錄</strong> — 你最近 10 筆器材查詢紀錄僅儲存在裝置本機。你可以隨時在「記錄」頁籤清除，或直接刪除本 App 以完全移除。</li>
+</ul>
+
+<h2>第三方服務</h2>
+<ul>
+<li><strong>Anthropic（Claude API）</strong> — 處理你提交的照片/文字以產生器材使用說明。詳見 <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic 隱私權政策</a>。</li>
+<li><strong>Apple（Core Location / MapKit）</strong> — 用於附近健身房功能，受 Apple 自身的隱私權規範管理。</li>
+<li><strong>Cloudflare（Workers / KV）</strong> — 用於架設我們的後端伺服器與暫存的使用次數限制紀錄。</li>
+</ul>
+
+<h2>我們不會蒐集的資訊</h2>
+<p>GymGuide 不需要註冊帳號，本 App 本身不會蒐集你的姓名/電子郵件，目前也未使用任何分析（analytics）或廣告 SDK，我們不會出售你的個人資訊。</p>
+
+<h2>你的選擇</h2>
+<p>你可以隨時在 iOS 設定中關閉相機或定位權限，本 App 屆時將無法提供對應功能（拍照搜尋，或附近健身房）。你可以在「記錄」頁籤清除本機查詢紀錄，或刪除本 App 以移除所有本機儲存的資料。</p>
+
+<h2>兒童隱私權</h2>
+<p>GymGuide 並非針對 13 歲以下兒童設計，我們不會在知情的情況下蒐集兒童的個人資訊。</p>
+
+<h2>政策異動</h2>
+<p>本政策可能隨 App 功能異動而更新（例如未來若加入廣告功能，我們會在該功能上線前先更新此頁面）。你在政策更新後繼續使用本 App，即表示同意更新後的內容。</p>
+
+<h2>聯絡我們</h2>
+<p>對本政策有任何疑問，歡迎透過 <a href="mailto:gakct2001@gmail.com">gakct2001@gmail.com</a> 與我們聯絡。</p>
+</div>
+
+<script>
+function showLang(lang) {
+  document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
+  document.getElementById('zh').style.display = lang === 'zh' ? 'block' : 'none';
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+}
+</script>
+</body>
+</html>
