@@ -33,41 +33,45 @@
 
 <div id="en">
 <h1>GymMayday Privacy Policy</h1>
-<p class="updated">Last updated: July 23, 2026</p>
+<p class="updated">Last updated: October 30, 2026</p>
 
 <p>GymMayday ("the App") is developed by Eric Tsai ("we", "us"). This policy explains what information the App collects, how it is used, and your choices. GymMayday does not require account creation or login.</p>
 
 <h2>Information We Collect and How It's Used</h2>
 <ul>
-<li><strong>Photos you capture or select</strong> — When you use the camera or text search to identify gym equipment, the photo or text query is sent to our backend server and forwarded to Anthropic's Claude API solely to generate the equipment guide. Photos are not stored on our server after the request completes.</li>
-<li><strong>Text search queries</strong> — Sent to our backend and Anthropic's Claude API for the same purpose as above.</li>
-<li><strong>IP address</strong> — Our backend temporarily records your IP address (keyed with the date) to enforce a daily usage limit and prevent abuse. This record automatically expires within about 26 hours and is not linked to any other personal information.</li>
-<li><strong>Location (When-In-Use)</strong> — If you use the "Nearby Gyms" feature, the App uses Apple's Core Location and MapKit frameworks to find gyms near you. Your location is processed on-device and by Apple's Maps service; it is never sent to our own backend server.</li>
-<li><strong>Profile and preferences you enter</strong> — Nickname, gender, age, fitness goal, coach name/appearance, app theme, and language preference are stored only in your device's local storage (UserDefaults). This data never leaves your device.</li>
-<li><strong>Search history</strong> — Your last 10 equipment lookups are stored locally on your device only. You can clear them anytime from the History tab, or remove them entirely by deleting the App.</li>
+<li><strong>App user ID</strong> — On first launch the App creates a random identifier (not derived from your device, Apple ID, or advertising ID) and stores it in the iOS Keychain. It is sent with AI requests so our backend can enforce your daily AI usage limit (Free/Pro). Our backend keeps only a per-day usage counter keyed by this ID, which automatically expires after about 26 hours. If the ID is missing, your IP address is used for the counter instead, with the same 26-hour expiry.</li>
+<li><strong>Subscription tier</strong> — Whether you are on Free or Pro is sent with AI requests to apply the correct daily limit.</li>
+<li><strong>Photos you capture or select</strong> — When you use photo search to identify gym equipment, a resized photo is sent to our backend server and forwarded to Anthropic's Claude API solely to generate the equipment guide. Photos are not stored on our server after the request completes.</li>
+<li><strong>Text search queries</strong> — Sent to our backend and Anthropic's Claude API for the same purpose. To answer repeat questions faster, the generated result for a query may be cached on our server for up to 30 days, keyed only by the query text and language — never by your user ID or IP address.</li>
+<li><strong>AI coach plan answers</strong> — If you request an AI coach plan, your answers (age range, gender, fitness goal, weekly availability, experience level, training intensity, and language) are sent to our backend and Anthropic's Claude API to generate the plan. Generated plans may be cached keyed only by that combination of answers, without your user ID.</li>
+<li><strong>Anonymous usage statistics</strong> — The App sends anonymous feature-usage events (e.g. which exercise or body part was looked up, search keyword, language) without any user ID or device identifier. Our backend only keeps aggregated counts.</li>
+<li><strong>Location</strong> — The App does not collect or use your location.</li>
+<li><strong>Apple Health (HealthKit)</strong> — If you allow it, the App reads your most recent workout from Apple Health on your device to pre-fill a workout log. Health data is used on-device only and is never uploaded to our server or any third party.</li>
+<li><strong>Profile, preferences, and history</strong> — Nickname, coach choice, app theme, language, workout logs, badges, and search history are stored on your device. If iCloud is enabled, some of this data (including the App user ID) is backed up to your own private iCloud storage (iCloud Key-Value Storage), which we cannot access.</li>
+<li><strong>Purchases</strong> — Pro subscriptions are purchased and processed by Apple through the App Store. We do not receive your payment information.</li>
 </ul>
 
 <h2>Advertising</h2>
-<p>After 5 free equipment searches, GymMayday asks you to watch a short rewarded ad (powered by Google AdMob) to continue searching. This is optional — you only see an ad if you choose to watch one to unlock further searches.</p>
+<p>Free users may choose to watch a short rewarded ad (powered by Google AdMob) to unlock additional use of certain features. Pro subscribers do not see ads. You only see an ad if you choose to watch one.</p>
 <ul>
-<li>To serve and measure ads, Google AdMob may collect your device's advertising identifier (IDFA), general device information, and app usage data related to ads.</li>
+<li>To serve and measure ads, Google AdMob may collect: a device identifier such as your advertising identifier (IDFA, only if you allow tracking) or other app/developer-scoped identifiers; your IP address, which may be used to estimate your general (coarse) location; product interaction data (e.g. app launches, taps, ad video views); advertising data (ads you have seen); performance data (e.g. launch time, hang rate, energy use); and crash logs. Google may use this data for third-party advertising, analytics, and — if you allow it — tracking across other companies' apps and websites.</li>
 <li>The first time you open the App, iOS will ask whether GymMayday may track your activity across other companies' apps and websites (App Tracking Transparency). If you allow tracking, you may see more personalized ads. If you decline, GymMayday only shows non-personalized ads — every other feature of the App works exactly the same either way.</li>
 <li>See <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's Ads Privacy & Terms</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">how Google uses information from apps that use its services</a> for details on how Google handles this data.</li>
 </ul>
 
 <h2>Third-Party Services</h2>
 <ul>
-<li><strong>Anthropic (Claude API)</strong> — Processes the photo/text you submit to generate the equipment guide. See <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</li>
-<li><strong>Apple (Core Location / MapKit)</strong> — Used for the Nearby Gyms feature, governed by Apple's own privacy practices.</li>
-<li><strong>Cloudflare (Workers / KV)</strong> — Hosts our backend server and temporary rate-limit records.</li>
+<li><strong>Anthropic (Claude API)</strong> — Processes the photo, text, or coach plan answers you submit to generate equipment guides and coach plans. See <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</li>
+<li><strong>Apple (App Store / StoreKit, iCloud, HealthKit)</strong> — Processes subscription purchases, stores your optional iCloud backup in your own iCloud account, and provides on-device Health data, governed by Apple's own privacy practices.</li>
+<li><strong>Cloudflare (Workers / KV)</strong> — Hosts our backend server and temporary usage-limit counters and cached AI results.</li>
 <li><strong>Google AdMob</strong> — Serves the rewarded ads described above. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
 </ul>
 
 <h2>Data We Do Not Collect</h2>
-<p>GymMayday does not require an account, does not collect your name/email through the App itself, does not use any analytics SDK, and does not sell your personal information. (See "Advertising" above for the one third-party SDK the App does use, and why.)</p>
+<p>GymMayday does not require an account, does not collect your name/email or location through the App itself, does not use any third-party analytics or crash-reporting SDK, and does not sell your personal information. (See "Advertising" above for the one third-party SDK the App does use, and why.)</p>
 
 <h2>Your Choices</h2>
-<p>You can deny camera or location permission at any time in iOS Settings; the App will simply be unable to offer the corresponding feature (photo search, or nearby gyms). You can also change your App Tracking Transparency choice at any time in iOS Settings &gt; Privacy &amp; Security &gt; Tracking, which controls whether ads shown in the App are personalized. You can clear your local search history from the History tab, or remove all locally stored data by deleting the App.</p>
+<p>You can deny camera, photo library, or Apple Health permission at any time in iOS Settings; the App will simply be unable to offer the corresponding feature. You can also change your App Tracking Transparency choice at any time in iOS Settings &gt; Privacy &amp; Security &gt; Tracking, which controls whether ads shown in the App are personalized. You can clear your local search history from the History tab, or remove all locally stored data by deleting the App.</p>
 
 <h2>Children's Privacy</h2>
 <p>GymMayday is not directed at children under 13, and we do not knowingly collect personal information from children.</p>
@@ -81,41 +85,45 @@
 
 <div id="zh">
 <h1>GymMayday 隱私權政策</h1>
-<p class="updated">最後更新日期：2026 年 7 月 23 日</p>
+<p class="updated">最後更新日期：2026 年 10 月 30 日</p>
 
 <p>GymMayday（以下稱「本 App」）由 Eric Tsai（以下稱「我們」）開發。本政策說明本 App 會蒐集哪些資訊、如何使用，以及你有哪些選擇。GymMayday 不需要註冊帳號或登入即可使用。</p>
 
 <h2>我們蒐集的資訊與使用方式</h2>
 <ul>
-<li><strong>你拍攝或選取的照片</strong> — 當你使用拍照或文字搜尋辨識健身器材時，照片或文字查詢內容會傳送至我們的後端伺服器，再轉送給 Anthropic 的 Claude API，僅用於產生器材使用說明。照片在請求處理完成後不會保存在我們的伺服器上。</li>
-<li><strong>文字搜尋內容</strong> — 基於與上述相同的目的，傳送至我們的後端與 Anthropic 的 Claude API。</li>
-<li><strong>IP 位址</strong> — 我們的後端會暫時以「IP + 日期」為索引記錄你的 IP 位址，用來限制每日使用次數、防止濫用。此紀錄約 26 小時後會自動失效，且不會與任何其他個人資訊建立關聯。</li>
-<li><strong>定位資訊（使用期間）</strong> — 若你使用「附近健身房」功能，本 App 會透過 Apple 的 Core Location 與 MapKit 框架尋找附近的健身房。你的定位資訊是在裝置端與 Apple 地圖服務處理，不會傳送到我們自己的後端伺服器。</li>
-<li><strong>你輸入的個人化資料</strong> — 暱稱、性別、年齡、健身目標、教練名字/外觀、App 主題與語言偏好，僅儲存在你裝置本機的儲存空間（UserDefaults）中，這些資料不會離開你的裝置。</li>
-<li><strong>查詢紀錄</strong> — 你最近 10 筆器材查詢紀錄僅儲存在裝置本機。你可以隨時在「記錄」頁籤清除，或直接刪除本 App 以完全移除。</li>
+<li><strong>App 使用者 ID</strong> — 本 App 首次啟動時會產生一組隨機識別碼（並非取自你的裝置、Apple ID 或廣告識別碼），儲存在 iOS 鑰匙圈（Keychain）中。這組 ID 會隨 AI 請求送出，讓後端依你的方案（免費／Pro）計算每日 AI 使用次數。後端只保存以此 ID 為索引的當日使用次數，約 26 小時後自動失效。若沒有這組 ID，則改以你的 IP 位址計數，同樣約 26 小時後失效。</li>
+<li><strong>訂閱方案</strong> — AI 請求會附帶你目前是免費或 Pro 方案，以套用正確的每日次數上限。</li>
+<li><strong>你拍攝或選取的照片</strong> — 當你使用拍照搜尋辨識健身器材時，縮小後的照片會傳送至我們的後端伺服器，再轉送給 Anthropic 的 Claude API，僅用於產生器材使用說明。照片在請求處理完成後不會保存在我們的伺服器上。</li>
+<li><strong>文字搜尋內容</strong> — 基於相同目的，傳送至我們的後端與 Anthropic 的 Claude API。為了更快回覆相同問題，產生的結果可能在伺服器上快取最多 30 天，且只以「查詢文字＋語言」為索引，不含你的使用者 ID 或 IP 位址。</li>
+<li><strong>AI 教練計畫問卷</strong> — 若你請求 AI 教練計畫，你的回答（年齡區間、性別、健身目標、每週可訓練時間、經驗程度、訓練強度與語言）會傳送至後端與 Anthropic 的 Claude API 以產生計畫。產生的計畫可能只以這組回答組合為索引快取，不含你的使用者 ID。</li>
+<li><strong>匿名使用統計</strong> — 本 App 會傳送匿名的功能使用事件（例如查詢了哪個動作或部位、搜尋關鍵字、語言），不含任何使用者 ID 或裝置識別碼，後端只保存彙總數字。</li>
+<li><strong>定位資訊</strong> — 本 App 不會蒐集或使用你的位置。</li>
+<li><strong>Apple「健康」（HealthKit）</strong> — 經你允許後，本 App 會在裝置上讀取「健康」App 中最近一筆體能訓練，用來預先填入訓練紀錄。健康資料只在裝置上使用，絕不會上傳到我們的伺服器或任何第三方。</li>
+<li><strong>個人化資料、偏好與紀錄</strong> — 暱稱、教練選擇、App 主題、語言、訓練紀錄、徽章與查詢紀錄都儲存在你的裝置上。若開啟 iCloud，部分資料（包含 App 使用者 ID）會備份到你自己的私人 iCloud 空間（iCloud 鍵值儲存），我們無法存取。</li>
+<li><strong>購買</strong> — Pro 訂閱由 Apple 透過 App Store 購買與處理，我們不會取得你的付款資訊。</li>
 </ul>
 
 <h2>廣告</h2>
-<p>每位使用者有 5 次免費器材查詢額度，超過後 GymMayday 會請你觀看一段簡短的獎勵廣告（由 Google AdMob 提供）才能繼續查詢。這是選擇性的——只有在你選擇觀看廣告以換取查詢次數時，才會顯示廣告。</p>
+<p>免費版使用者可選擇觀看一段簡短的獎勵廣告（由 Google AdMob 提供），以解鎖部分功能的額外使用次數。Pro 訂閱者不會看到廣告。只有在你選擇觀看時，才會顯示廣告。</p>
 <ul>
-<li>為了投放與衡量廣告成效，Google AdMob 可能會蒐集你裝置的廣告識別碼（IDFA）、一般裝置資訊，以及與廣告相關的 App 使用資料。</li>
+<li>為了投放與衡量廣告成效，Google AdMob 可能會蒐集：裝置識別碼，例如廣告識別碼（IDFA，僅在你允許追蹤時）或其他 App／開發者範圍的識別碼；IP 位址（可能用於估算你的大略位置）；產品互動資料（例如 App 啟動、點按、廣告影片觀看）；廣告資料（你看過的廣告）；效能資料（例如啟動時間、無回應率、耗電）；以及當機記錄。Google 可能將這些資料用於第三方廣告、分析，以及（在你允許時）跨其他公司 App 與網站的追蹤。</li>
 <li>你第一次開啟本 App 時，iOS 會詢問是否允許 GymMayday 追蹤你在其他公司 App 與網站上的活動（App 追蹤透明度）。若你允許追蹤，可能會看到較個人化的廣告；若你拒絕，GymMayday 僅會顯示非個人化廣告——不論你的選擇為何，App 其他所有功能都完全相同、不受影響。</li>
 <li>詳見 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 廣告隱私權與條款</a>與 <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google 如何使用採用其服務之應用程式提供的資訊</a>，瞭解 Google 如何處理這些資料。</li>
 </ul>
 
 <h2>第三方服務</h2>
 <ul>
-<li><strong>Anthropic（Claude API）</strong> — 處理你提交的照片/文字以產生器材使用說明。詳見 <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic 隱私權政策</a>。</li>
-<li><strong>Apple（Core Location / MapKit）</strong> — 用於附近健身房功能，受 Apple 自身的隱私權規範管理。</li>
-<li><strong>Cloudflare（Workers / KV）</strong> — 用於架設我們的後端伺服器與暫存的使用次數限制紀錄。</li>
+<li><strong>Anthropic（Claude API）</strong> — 處理你提交的照片、文字或教練計畫問卷，以產生器材使用說明與教練計畫。詳見 <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic 隱私權政策</a>。</li>
+<li><strong>Apple（App Store／StoreKit、iCloud、HealthKit）</strong> — 處理訂閱購買、將選擇性的 iCloud 備份存放在你自己的 iCloud 帳號，並提供裝置上的健康資料，受 Apple 自身的隱私權規範管理。</li>
+<li><strong>Cloudflare（Workers / KV）</strong> — 用於架設我們的後端伺服器與暫存的使用次數計數與 AI 結果快取。</li>
 <li><strong>Google AdMob</strong> — 提供上述的獎勵廣告服務。詳見 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a>。</li>
 </ul>
 
 <h2>我們不會蒐集的資訊</h2>
-<p>GymMayday 不需要註冊帳號，本 App 本身不會蒐集你的姓名/電子郵件，未使用任何分析（analytics）SDK，我們也不會出售你的個人資訊。（本 App 唯一使用的第三方 SDK 是廣告用途，詳見上方「廣告」段落。）</p>
+<p>GymMayday 不需要註冊帳號，本 App 本身不會蒐集你的姓名/電子郵件或位置，未使用任何第三方分析或當機回報 SDK，我們也不會出售你的個人資訊。（本 App 唯一使用的第三方 SDK 是廣告用途，詳見上方「廣告」段落。）</p>
 
 <h2>你的選擇</h2>
-<p>你可以隨時在 iOS 設定中關閉相機或定位權限，本 App 屆時將無法提供對應功能（拍照搜尋，或附近健身房）。你也可以隨時在 iOS「設定」>「隱私權與安全性」>「追蹤」中變更你的 App 追蹤透明度選擇，這會決定 App 內顯示的廣告是否個人化。你可以在「記錄」頁籤清除本機查詢紀錄，或刪除本 App 以移除所有本機儲存的資料。</p>
+<p>你可以隨時在 iOS 設定中關閉相機、照片或「健康」權限，本 App 屆時將無法提供對應功能。你也可以隨時在 iOS「設定」>「隱私權與安全性」>「追蹤」中變更你的 App 追蹤透明度選擇，這會決定 App 內顯示的廣告是否個人化。你可以在「記錄」頁籤清除本機查詢紀錄，或刪除本 App 以移除所有本機儲存的資料。</p>
 
 <h2>兒童隱私權</h2>
 <p>GymMayday 並非針對 13 歲以下兒童設計，我們不會在知情的情況下蒐集兒童的個人資訊。</p>
